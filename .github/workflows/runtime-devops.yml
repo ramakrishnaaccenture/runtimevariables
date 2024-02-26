@@ -16,6 +16,6 @@ jobs:
     steps:
       
       - name: Run my job
-        uses: ./.github/workflow/templates/blank.yml
+        uses: ./.github/workflows/blank.yml
       
          
