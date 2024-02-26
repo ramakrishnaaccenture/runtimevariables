@@ -1,0 +1,32 @@
+# ./.github/actions/blank/action.yml
+name: 'Maven Build'
+
+on:
+  workflow_call:
+    inputs:
+      runs-on:
+        required: true
+        type: string
+        description: "Defines the type of machine to run the job on"
+      param1:
+        required: true
+        type: number
+        description: "The Java version that is going to be set up."
+      param2:
+        required: true
+        type: string
+        description: "JFrog Artifactory URL"
+
+jobs:
+  catDotCom-release-create:
+    runs-on: ${{ inputs.runs-on }}
+
+    steps:
+      - name: clean workspace
+        run: |
+          rm -rf ${{ github.workspace }}/*
+
+      - name: print variables
+        run: |
+          echo "param1: ${{ inputs.param1 }}"
+          echo "param2: ${{ inputs.param2 }}"

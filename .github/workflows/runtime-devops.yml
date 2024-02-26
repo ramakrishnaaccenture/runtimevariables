@@ -1,3 +1,4 @@
+# ./.github/workflows/main.yml
 name: Manual Workflow
 
 on:
@@ -18,7 +19,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run my job
-        uses: ./.github/workflows/blank.yml
+        uses: ./.github/actions/blank
         with:
           param1: ${{ github.event.inputs.param1 }}
           param2: ${{ github.event.inputs.param2 }}
