@@ -1,4 +1,4 @@
-name: "Maven Build"
+name: 'Maven Build'
 
 on:
   workflow_call:
@@ -16,23 +16,16 @@ on:
         type: string
         description: "JFrog Artifactory URL"
 
-
-
-        
 jobs:
   catDotCom-release-create:
-    name: catDotCom-release-create
-    runs-on:
-     group: "Build-Deploy-Runners"
+    runs-on: ${{ inputs.runs-on }}
 
     steps:
+      - name: clean workspace   
+        run: |
+          rm -rf ${{ github.workspace }}/*
 
-    - name: clean workspace   
-      run: |
-              rm -rf ${{ github.workspace }}/*   
-
-    - name: print variables
-      run:  |
-      
-            echo $param1
-            echo $param2
+      - name: print variables
+        run: |
+          echo "param1: ${{ inputs.param1 }}"
+          echo "param2: ${{ inputs.param2 }}"
