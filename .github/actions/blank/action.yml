@@ -16,9 +16,13 @@ inputs:
     type: string
 
 runs:
-  using: 'shell'
-  shell: bash
-  command: |
-    rm -rf ${{ github.workspace }}/*
-    echo "param1: ${{ inputs.param1 }}"
-    echo "param2: ${{ inputs.param2 }}"
+  using: 'composite'
+  steps:
+    - name: clean workspace
+      run: |
+        rm -rf ${{ github.workspace }}/*
+
+    - name: print variables
+      run: |
+        echo "param1: ${{ inputs.param1 }}"
+        echo "param2: ${{ inputs.param2 }}"
