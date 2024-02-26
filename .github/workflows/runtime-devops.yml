@@ -14,11 +14,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      
-      - name: checkout repo
+      - name: Checkout repo
         uses: actions/checkout@v3
-      
+
       - name: Run my job
-        uses: ./.github/workflows/blank.yml
-      
-         
+        run: ./.github/workflows/blank.yml
