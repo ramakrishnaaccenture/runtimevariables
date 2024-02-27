@@ -13,13 +13,13 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      uses: ./.github/workflows/blank.yml@main
+      with:
+        param1: ${{ github.event.inputs.param1 }}
+        param2: ${{ github.event.inputs.param2 }}
 
-      - name: Run my job
-        uses: ./.github/actions/blank
-        with:
-          param1: ${{ github.event.inputs.param1 }}
-          param2: ${{ github.event.inputs.param2 }}
+    deploy:
+      uses: ./.github/workflows/blank1.yml@main
+      with:
+        param1: ${{ github.event.inputs.param1 }}
+        param2: ${{ github.event.inputs.param2 }}        
