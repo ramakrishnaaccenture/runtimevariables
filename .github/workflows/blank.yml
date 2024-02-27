@@ -9,7 +9,7 @@ on:
       #   description: "Defines the type of machine to run the job on"
       param1:
         required: true
-        type: number
+        type: string
         description: "The Java version that is going to be set up. Takes a whole or semver Java version. (https://github.com/actions/setup-java#supported-version-syntax)"
       param2:
         required: true
