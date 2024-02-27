@@ -1,10 +1,20 @@
-name: Workflow using an action
+# .github/workflows/main.yml
+
+name: Main Workflow
+
 on:
   workflow_dispatch:
 
 jobs:
-  job:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
-    - uses: ./.github.actions/blank.yml
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run Action 1
+      uses: ./action1.yml  # Reference the first action file
+
+    - name: Run Action 2
+      uses: ./action2.yml  # Reference the second action file
