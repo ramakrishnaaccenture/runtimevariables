@@ -13,13 +13,13 @@ on:
 
 jobs:
     build:
-        uses: ./.github/workflows/blank.yml@main
+        uses: ./.github/workflows/blank.yml
         with:
           param1: ${{ github.event.inputs.param1 }}
           param2: ${{ github.event.inputs.param2 }}
 
     deploy:
-      uses: ./.github/workflows/blank1.yml@main
+      uses: ./.github/workflows/blank1.yml
       with:
         param1: ${{ github.event.inputs.param1 }}
         param2: ${{ github.event.inputs.param2 }}        
