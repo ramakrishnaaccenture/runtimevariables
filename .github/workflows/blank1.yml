@@ -17,7 +17,7 @@ on:
         description: "JFrog Artifactory URL"
 
 jobs:
-  catDotCom-release-create:
+  build:
     runs-on: ubuntu-latest
 
     steps:
