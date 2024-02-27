@@ -13,4 +13,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Run Action 1
       uses: https://github.com/ramakrishnaaccenture/runtimevariables/.github/workflows/action1.yml@main # Reference the first action file
+
+    - name: Run Action 2
+      uses: https://github.com/ramakrishnaaccenture/runtimevariables/.github/workflows/action2.yml@main  # Reference the second action file
